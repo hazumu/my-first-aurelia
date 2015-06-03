@@ -5,7 +5,8 @@ import {HttpClient} from 'aurelia-http-client';
 export class Flickr{
   heading = 'Flickr'
   images = []
-  query = 'mountain'
+  query = 'fishing'
+  page = 4
 
   get url(){
     return `http://api.flickr.com/services/feeds/photos_public.gne?tags=${this.query}&tagmode=any&format=json`
@@ -27,8 +28,6 @@ export class Flickr{
   }
 
   clear() {
-    console.log(this.images)
-    this.images = []
-    console.log(this.images)
+    this.images = null
   }
 }
